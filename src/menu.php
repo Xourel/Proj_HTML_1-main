@@ -1,6 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     <?php
@@ -30,13 +34,18 @@
                 //var_dump($items);
                 $PlateName = $items->name_fr ;
                 //var_dump($PlateName);
-                //var_dump($items->images[0]);
-                foreach($items->images as $image){
-                    ?>
-                    <div class="usercell">
-                    <div class="avatar">
-                        <img src="<?php echo $image; ?> "/>
+                ?>
+                <div class="Plate">
+                    
+                    <div class="Plate_name">
+                        <p><?php echo $PlateName; ?></p>
                     </div>
+                    <?php
+                    foreach($items->images as $image){
+                    ?>
+                        <div class="Plate_img">
+                        <img src="<?php echo $image; ?> "/>
+                        </div>
                 </div>
                 <?php
                 echo '<br/>';
