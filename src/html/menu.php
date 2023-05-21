@@ -1,77 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>
+    <head>
+        <style>
+            
+            .button {
+            width: 300px;
+            height:40px;
+            background-color: greenyellow;
+            display: block;
+            margin : auto;
+            }
+ 
+            .container {
+                margin-top:100px;
+            }
+            
+            .button:hover {background-color: green;}
+            .menu{background-color:lightblue;color:black;text-align: center; width:auto; height:auto;}
+            p {
+                font-size: x-large;
+            }
+            
+        </style>
+        <script>
+            function showStarter(){
+                x=document.getElementById("starter")
+                if (x.style.display == "none"){
+                    x.style.display = "block";
+                }else{
+                    x.style.display = "none"
+                }
+            }
+            function showPlat(){
+                y=document.getElementById("plat")
+                if (y.style.display == "none"){
+                    y.style.display = "block";
+                }else{
+                    y.style.display = "none"
+                }
+            }
+            function showDesert(){
+                z=document.getElementById("desert")
+                if (z.style.display == "none"){
+                    z.style.display = "block";
+                }else{
+                    z.style.display = "none"
+                }
+            }
+            function goToPage(){
+                location.assign("produit.php");
+            }
 
-    <link rel="stylesheet" href="../css/menu.css"/>
-    <script type="text/javascript" src="../menu.JS" ></script>
-    
-</head>
-<body>
+            
+        </script>
 
-    <?php
-       $url = "http://test.api.catering.bluecodegames.com/menu";
-
-        $postdata = json_encode(
-            array("ip_shop" => "1")
-        );
-
-       //Création d'un flux
-       $opts = array(
+        <?php
+        $url = "http://test.api.catering.bluecodegames.com/menu";
+        $opts = array(
             'http' => array(
                 'method' => "POST",
                 'header' => "Content-Type:application/json",
                 'content' => '{"id_shop":"1"}'
             )
         );
-
         $context = stream_context_create($opts);
-
-        // Accès à un fichier HTTP avec les entetes HTTP indiquéci-dessus
         $file = file_get_contents($url,false,$context);
-        $json = json_decode($file); //decoder notre string en un objet réel 
-        //var_dump($json);
+        $json = json_decode($file);
         ?>
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-        <?php
-        foreach($json->data as $subarray){
-           
-            foreach($subarray->items as $items){
-                //var_dump($items);
-                $PlateName = $items->name_fr ;
+
+    </head>
+<?php
+    ob_start();
+?>
+    <body>
+        <div class="container">
+        <button  class="button"onclick = "showStarter()">Entrée</button><br>
+        <div id="starter" class = "menu" style="display:none">
+            <p>liste des entrée</p>
+            <?php   
+            foreach($json->data as $subarray)
+            {
+                foreach($subarray->items as $items)
+                {
+                    $IdCat = $items->id_category;
+                    if ($IdCat == 27){
+                    $PlateName = $items->name_fr ;
+                    ?>
+                    <button onclick = "goToPage()"><?php echo $PlateName ?></button><br>
+                    <?php
+                    //echo $PlateName;
+                    } 
                 
-                //var_dump($PlateName);
-                    foreach($items->images as $image){
-                        ?>
-                        <div class="mySlides fade">
-                        <img src="<?php echo $image?>" style="width:50%">
-                        </div>
-                        <?php
-
-                    }
+                }
             }
+            ?>
             
-        }
-    
-        ?>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-          <br>
-          
-          <!-- The dots/circles -->
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-
-
-
-</body>
-
-<html>
+        </div><br>
+        <button class="button"onclick = "showPlat()">Plat</button><br>
+        <div id="plat" class = "menu" style="display:none">
+            <p>liste des plats</p>
+            <?php   
+            foreach($json->data as $subarray)
+            {
+                foreach($subarray->items as $items)
+                {
+                    $IdCat = $items->id_category;
+                    if ($IdCat == 28){
+                    $PlateName = $items->name_fr ;
+                    ?>
+                    <button onclick = "goToPage()"><?php echo $PlateName ?></button><br>
+                    <?php
+                    //echo $PlateName;
+                    } 
+                
+                }
+            }
+            ?>
+        </div><br>
+        <button class="button"onclick = "showDesert()">Dessert</button><br>
+        <div id="desert" class = "menu" style="display:none">
+            <p>liste des déssert</p>
+            <?php   
+            foreach($json->data as $subarray)
+            {
+                foreach($subarray->items as $items)
+                {
+                    $IdCat = $items->id_category;
+                    if ($IdCat == 29){
+                    $PlateName = $items->name_fr ;
+                    ?>
+                    <button onclick = "goToPage()"><?php echo $PlateName ?></button><br>
+                    <?php
+                    //echo $PlateName;
+                    } 
+                
+                }
+            }
+            ?>
+        </div><br>  
+        </div> 
+    </body>
+<?php
+    $content = ob_get_clean();
+    require_once("template.php");
+?>
+</html>
