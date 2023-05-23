@@ -74,7 +74,7 @@
 ?>
     <body>
         <div class="container">
-        <button  class="button"onclick = "showStarter()">Entrée</button><br>
+        <button  class="button"onclick = "showStarter()">Entrée 🥗</button><br>
         <div id="starter" class = "menu" style="display:none">
             <p>liste des entrée</p>
             <?php   
@@ -96,7 +96,7 @@
             ?>
             
         </div><br>
-        <button class="button"onclick = "showPlat()">Plat</button><br>
+        <button class="button"onclick = "showPlat()">Plat 🍽️</button><br>
         <div id="plat" class = "menu" style="display:none">
             <p>liste des plats</p>
             <?php   
@@ -117,7 +117,7 @@
             }
             ?>
         </div><br>
-        <button class="button"onclick = "showDesert()">Dessert</button><br>
+        <button class="button"onclick = "showDesert()">Dessert 🧁</button><br>
         <div id="desert" class = "menu" style="display:none">
             <p>liste des déssert</p>
             <?php   
