@@ -20,6 +20,7 @@ ob_start();
                 $firstImg = $json->data[0]->items[0]->images[0];
                 $Price = $json->data[0]->items[0]->prices[0]->price ;
             
+                
 
                     if (!filter_var($firstImg, FILTER_VALIDATE_URL) === false) {
                         echo("URL est valide");
