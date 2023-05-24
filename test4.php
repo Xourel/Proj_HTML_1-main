@@ -33,7 +33,7 @@
         $file = file_get_contents($url,false,$context);
         $json = json_decode($file); //decoder notre string en un objet réel 
         
-        ob_start();
+       ob_start();
   
   
            //var_dump($json->data[0]->items[0]->ingredients);
@@ -74,7 +74,7 @@
         <?php
                 foreach($json->data[1]->items[0]->ingredients as $ing)
                 {?>
-                <div> <p> <?php echo "\t" , $ing->name_fr;?> </p> </div>
+                <div> <p> <?php echo  $ing->name_fr;?> </p> </div>
                 <?php
                 }
                 ?>

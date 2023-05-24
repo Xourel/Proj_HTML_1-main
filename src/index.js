@@ -1,22 +1,28 @@
-const carousel = document.querySelector('.carousel-inner');
-let position = 0;
-const slideWidth = carousel.offsetWidth;
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function slideNext() {
-  position -= slideWidth;
-  if (position < -slideWidth * 3) {
-    position = 0;
-  }
-  carousel.style.transform = `translateX(${position}px)`;
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-function slidePrevious() {
-  position += slideWidth;
-  if (position > 0) {
-    position = -slideWidth * 3;
-  }
-  carousel.style.transform = `translateX(${position}px)`;
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-document.querySelector('.carousel-next').addEventListener('click', slideNext);
-document.querySelector('.carousel-previous').addEventListener('click', slidePrevious);
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}

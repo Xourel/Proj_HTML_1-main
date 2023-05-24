@@ -80,13 +80,14 @@
             <?php   
             foreach($json->data as $subarray)
             {
-                foreach($subarray->items as $items)
+                foreach($subarray->items as $item)
                 {
-                    $IdCat = $items->id_category;
+                    $IdCat = $item->id_category;
                     if ($IdCat == 27){
-                    $PlateName = $items->name_fr ;
+                    $param = urlencode(json_encode($item));
                     ?>
-                    <button onclick = "goToPage()"><?php echo $PlateName ?></button><br>
+                        
+                        <a href="produit.php?item=<?php echo $param; ?>"><?php echo $item->name_fr ; ?></a>
                     <?php
                     //echo $PlateName;
                     } 
@@ -102,14 +103,15 @@
             <?php   
             foreach($json->data as $subarray)
             {
-                foreach($subarray->items as $items)
+                foreach($subarray->items as $item)
                 {
-                    $IdCat = $items->id_category;
+                    $IdCat = $item->id_category;
                     if ($IdCat == 28){
-                    $PlateName = $items->name_fr ;
-                    ?>
-                    <button onclick = "goToPage()"><?php echo $PlateName ?></button><br>
-                    <?php
+                        $param = urlencode(json_encode($item));
+                        ?>
+                            
+                            <a href="produit.php?item=<?php echo $param; ?>"><?php echo $item->name_fr ; ?></a>
+                        <?php
                     //echo $PlateName;
                     } 
                 
@@ -123,14 +125,16 @@
             <?php   
             foreach($json->data as $subarray)
             {
-                foreach($subarray->items as $items)
+                foreach($subarray->items as $item)
                 {
-                    $IdCat = $items->id_category;
+                    $IdCat = $item->id_category;
                     if ($IdCat == 29){
-                    $PlateName = $items->name_fr ;
-                    ?>
-                    <button onclick = "goToPage()"><?php echo $PlateName ?></button><br>
-                    <?php
+                    $PlateName = $item->name_fr ;
+                    $param = urlencode(json_encode($item));
+                        ?>
+                            
+                            <a href="produit.php?item=<?php echo $param; ?>"><?php echo $PlateName ; ?></a>
+                        <?php
                     //echo $PlateName;
                     } 
                 

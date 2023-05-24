@@ -1,41 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css"/>
+    <script type="text/javascript" src="test.JS" ></script>
+    <link rel="stylesheet" href="../../test.css"/>
+    <script type="text/javascript" src="../../test.JS" ></script>
+
+</head>
+
 <?php
     ob_start();
 ?>
-        <script type="text/javascript" src="test.JS" ></script>
-    
-    </head>
+
     <body>
     
         <?php
-           $url = "http://test.api.catering.bluecodegames.com/menu";
-    
-            $postdata = json_encode(
-                array("ip_shop" => "1")
-            );
-    
-           //Création d'un flux
-           $opts = array(
-                'http' => array(
-                    'method' => "POST",
-                    'header' => "Content-Type:application/json",
-                    'content' => '{"id_shop":"1"}'
-                )
-            );
-    
-            $context = stream_context_create($opts);
-    
-            // Accès à un fichier HTTP avec les entetes HTTP indiquéci-dessus
-            $file = file_get_contents($url,false,$context);
-            $json = json_decode($file); //decoder notre string en un objet réel 
-            
+          
+            $json = json_decode(urldecode($_GET['item'])) ; //decoder notre string en un objet réel 
+
             ob_start();
       
       
                //var_dump($json->data[0]->items[0]->ingredients);
                 
-                    $PlateName = $json->data[1]->items[0]->name_fr ;
+                    $PlateName = $json->name_fr ;
                     //$firstImg = $json->data[1]->items[0]->images[2];
-                    $Price = $json->data[1]->items[0]->prices[0]->price ;
+                    $Price = $json->prices[0]->price ;
             ?>
             
             <div class="wrapper">
@@ -46,7 +40,7 @@
                 <div class="slideshow-container">
     
                 <?php
-                    foreach($json->data[1]->items[0]->images as $img)
+                    foreach($json->images as $img)
                     {?>
                     <!-- Full-width images with number and caption text -->
                     <div class="mySlides fade">
@@ -67,7 +61,7 @@
             <article class="main">
             <p> Ingredients :</p>
             <?php
-                    foreach($json->data[1]->items[0]->ingredients as $ing)
+                    foreach($json->ingredients as $ing)
                     {?>
                     <div> <p> <?php echo "\t" , $ing->name_fr;?> </p> </div>
                     <?php
@@ -88,10 +82,7 @@
             
             <?php
             $content = ob_get_clean();
-            require_once("src/html/template.php");
+            require_once("template.php");
             ?>
     </body>
     <html>
-<?php
-$content = ob_get_clean();
-    require_once("template.php");
