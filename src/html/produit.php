@@ -1,22 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="test.css"/>
-    <script type="text/javascript" src="test.JS" ></script>
-    <link rel="stylesheet" href="../../test.css"/>
-    <script type="text/javascript" src="../../test.JS" ></script>
 
-</head>
+
+    <style> /*CSS*/
+         /* .c-item{
+            height: 350px;
+            width: 300px;
+          }*/
+         /*.c_img{
+            height: 100%; /* donne a l'image 100% de la taille de son objet mere 
+            width: 100%;
+            object-fit: cover; /* adapte l'image a la taile imposé  
+            /*filter: 
+          }*/
+          .header{
+            font-size: x-large;
+          }
+        </style>
+
 
 <?php
     ob_start();
 ?>
 
-    <body>
     
         <?php
           
@@ -36,34 +40,41 @@
             <header class="header"><p font-size: x-large> <?php echo $PlateName?></p></header>
             <aside class="aside aside-1"><p>
     
-                <!-- Slideshow container -->
-                <div class="slideshow-container">
-    
-                <?php
-                    foreach($json->images as $img)
-                    {?>
-                    <!-- Full-width images with number and caption text -->
-                    <div class="mySlides fade">
-                        <img src="<?php echo $img?>" onerror="this.onerror=null;this.src='https://placeimg.com/200/300/animals';" style="width:75%">
-                        <div class="text"> <?php echo $PlateName?></div>
-                    </div>
+            <div id="PlateCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
                     <?php
-                    }
-                    ?>
-    
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    foreach($json->images as $img)
+                        {?>
+                        <!-- Full-width images with number and caption text -->
+                        <div class="carousel-item active c-item">
+                            <img src="<?php echo $img?>" onerror="this.onerror=null;this.src='https://placeimg.com/200/300/animals';" style="width:75%" class="d-block w-100 c-img" alt= <?php echo $PlateName?>>
+                        </div>
+                        <?php
+                        }
+                        ?>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#PlateCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#PlateCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
                 </div>
                 <br>
-                
-            </p> </aside>
+                <div> <p> <?php echo  $Price . " €";?> </p> </div>
+
+
+            </aside>
             <article class="main">
             <p> Ingredients :</p>
+            <div class=""
             <?php
                     foreach($json->ingredients as $ing)
                     {?>
-                    <div> <p> <?php echo "\t" , $ing->name_fr;?> </p> </div>
+                        <p> <?php echo "\t" , $ing->name_fr;?> </p>
                     <?php
                     }
                     ?>
@@ -84,5 +95,4 @@
             $content = ob_get_clean();
             require_once("template.php");
             ?>
-    </body>
-    <html>
+  

@@ -8,6 +8,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/png" href="../../res/img/favicon.jfif"/>
 
+        <link rel="stylesheet" href="../css/template.css"/>
+
+
+        <link rel="stylesheet" href="../../test.css"/>
+       <script type="text/javascript" src="../../test.JS" ></script>
 
         <link rel="stylesheet" href="../css/index.css"/>
     <script type="text/javascript" src="../index.js"></script>
@@ -26,17 +31,17 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link " aria-current="page" href="index.php">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Menu.php">Menu</a>
+                    <a class="nav-link " href="Menu.php">Menu</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Client
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Compte</a></li>
+                      <li><a class="dropdown-item" href="login.php">Compte</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Panier</a></li>
                       <li><a class="dropdown-item" href="#">Réservation</a></li>

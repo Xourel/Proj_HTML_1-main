@@ -14,26 +14,12 @@
             }
             
             .button:hover {background-color: #fa579e;}
-            .menu{
-                background-color:lightblue;
-                color:black;
-                text-align: center; 
-                width:50%; 
-                height:auto;
-                margin: auto;
-            }
-                
+            .menu{background-color:lightblue;color:black;text-align: center; width:auto; height:auto;}
             p {
                 font-size: x-large;
             }
-            a{
-                color: #5784BA;
-            }
             
         </style>
-
-            
-
         <script>
             function showStarter(index){
                 let x = document.getElementsByClassName("menu")[index]
@@ -60,7 +46,7 @@
         $context = stream_context_create($opts);
         $file = file_get_contents($url,false,$context);
         $json = json_decode($file);
-
+        var_dump($json);
         ?>
 
 <?php
@@ -101,5 +87,5 @@
 
 <?php
     $content = ob_get_clean();
-    require_once("template.php");
+    require_once("src/html/template.php");
 ?>
