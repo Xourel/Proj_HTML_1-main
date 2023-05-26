@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,7 +45,7 @@
                       Client
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="login.php">Compte</a></li>
+                      <li><a class="dropdown-item" href="config.php">Compte</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Panier</a></li>
                       <li><a class="dropdown-item" href="#">Réservation</a></li>
