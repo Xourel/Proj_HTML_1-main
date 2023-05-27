@@ -8,18 +8,20 @@ session_start();
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+
+        <title>Restau</title>
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
         <link rel="shortcut icon" type="image/png" href="../../res/img/favicon.jfif"/>
 
+
         <link rel="stylesheet" href="../css/template.css"/>
-
-
         <link rel="stylesheet" href="../../test.css"/>
        <script type="text/javascript" src="../../test.JS" ></script>
-
         <link rel="stylesheet" href="../css/index.css"/>
     <script type="text/javascript" src="../index.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
