@@ -17,11 +17,8 @@ session_start();
 
 
         <link rel="stylesheet" href="../css/template.css"/>
-        <link rel="stylesheet" href="../../test.css"/>
-       <script type="text/javascript" src="../../test.JS" ></script>
         <link rel="stylesheet" href="../css/index.css"/>
-    <script type="text/javascript" src="../index.js"></script>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 

@@ -30,7 +30,7 @@ body {
 .header {
   padding: 60px;
   text-align: center;
-  background: #1abc9c;
+  background: #9AC8EB ;
   color: white;
 }
 
@@ -45,30 +45,28 @@ body {
 .side {
     order:2;
   flex: 30%;
-  background-color: #f1f1f1;
+  background-color: #F4CFDF;
   padding: 20px;
 }
 
 /* Main column */
 .main {
   order: 1;
-  flex: 50%;
-  background-color: white;
+  flex: 40%;
+  background-color: #F7F6CF;
   padding: 20px;
 }
 
 /* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
+.c-img {
+  height: 500px;
+  object-fit: cover;
 }
 
 /* Footer */
 .footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
 }
 h1  {
     text-align: center;
@@ -76,7 +74,7 @@ h1  {
 h2  {
     text-align: center;
 }
-h3  {
+h5  {
     text-align: center;
 }
 
@@ -88,12 +86,9 @@ h3  {
 }
 </style>
 
-
-
 <!-- Header -->
 <div class="header">
-  <h1>My Website</h1>
-  <p>With a <b>flexible</b> layout.</p>
+  <h1> <?php echo $PlateName?></h1>
 </div>
 
 <!-- The flexible grid (content) -->
@@ -106,8 +101,8 @@ h3  {
                     foreach($json->images as $img)
                         {?>
                         <!-- Full-width images with number and caption text -->
-                        <div class="carousel-item active c-item">
-                            <img src="<?php echo $img?>" onerror="this.onerror=null;this.src='https://placeimg.com/200/300/animals';"  class="d-block w-100 c-img" alt= <?php echo $PlateName?>>
+                        <div class="carousel-item active c-img">
+                            <img src="<?php echo $img?>" onerror="this.onerror=null;this.src='../../res/img/imageNontrouvé';"  class="d-block w-100 c-img" alt= <?php echo $PlateName?>>
                         </div>
                         <?php
                         }
@@ -124,18 +119,19 @@ h3  {
     </div>
   </div>
   <div class="side">
+    <br><br>
   <h1> Ingredients :</h1><br>
-  <p>
+  <h5>
             <?php
                 foreach($json->ingredients as $ing)
                 {?>
                      <?php echo $ing->name_fr . ', ';?>
                 <?php
                 }
-            ?></p>
+            ?></h5>
     <br>
     <h2> Prix :</h2><br>
-    <h3><?php echo  $Price . " €";?> <h3>
+    <h5><?php echo  $Price . " €";?> <h5>
             
   </div>
 </div>
