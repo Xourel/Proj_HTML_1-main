@@ -37,11 +37,6 @@
   border-radius: 3px 0 0 3px;
 }
 
-.prev {
-  left: 0;
-  border-radius: 3px 0 0 3px;
-}
-
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
@@ -98,57 +93,4 @@
   to {
     opacity: 1;
   }
-}
-
-.wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  font-weight: bold;
-  text-align: center;
-}
-
-.wrapper > * {
-  padding: 10px;
-  flex: 1 100%;
-}
-
-.header {
-  background: tomato;
-}
-
-.footer {
-  background: lightgreen;
-}
-
-.main {
-  text-align: left;
-  background: deepskyblue;
-}
-
-.aside-1 {
-  background: gold;
-}
-
-.aside-2 {
-  background: hotpink;
-}
-
-@media all and (min-width: 600px) {
-  .aside {
-    flex: 1 0 0;
-  }
-}
-/*
-Le premier chiffre (flex-grow): Il définit la capacité d'un élément à grandir et à occuper l'espace disponible.
- Dans ce cas, la valeur 1 indique que l'élément .aside peut grandir et prendre de l'espace supplémentaire si disponible.
-
-Le deuxième chiffre (flex-shrink): Il définit la capacité d'un élément à se réduire et à libérer de l'espace lorsque nécessaire. 
-La valeur 0 indique que l'élément .aside ne peut pas se réduire et ne libérera pas d'espace si l'espace disponible devient insuffisant.
-
-Le troisième chiffre (flex-basis): Il définit la taille de base d'un élément avant la distribution de l'espace disponible. 
-La valeur 0 signifie que l'élément .aside a une taille de base de zéro, ce qui lui permet de s'ajuster dynamiquement en fonction de l'espace disponible.
-  */
-
-.body {
-  padding: 2em;
 }
