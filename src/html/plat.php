@@ -30,7 +30,6 @@ body {
 .header {
   padding: 60px;
   text-align: center;
-  background: #9AC8EB ;
   color: white;
 }
 
@@ -120,7 +119,7 @@ h5  {
   </div>
   <div class="side">
     <br><br>
-  <h1> Ingredients :</h1><br>
+  <h2> Ingredients :</h2><br>
   <h5>
             <?php
                 foreach($json->ingredients as $ing)
