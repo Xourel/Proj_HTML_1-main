@@ -1,16 +1,17 @@
-<!--
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="..\css\index.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>accueil</title>
 </head> 
 <body>
--->   
+  
     <?php
     ob_start();
     ?>
@@ -20,7 +21,7 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <img src="https://www.rtes.fr/system/files/inline-images/image%20de%20test.jpeg" alt="Image 1" width="300" height="300">
+    <img src="https://www.rtes.fr/system/files/inline-images/image%20de%20test.jpeg" alt="Image 1" height="300">
     </div>
     <div class="carousel-item">
     <img src="..\..\res\img\index\windows.jpg" alt="Image 1" width="300" height="300">

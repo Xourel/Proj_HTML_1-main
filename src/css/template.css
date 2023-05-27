@@ -2,3 +2,9 @@ body {
   background-color: #f7f6cf;
   color: #5784ba;
 }
+
+body {
+  background-image: url("../../res/img/index/image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
