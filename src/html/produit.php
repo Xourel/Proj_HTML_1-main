@@ -11,9 +11,7 @@
             object-fit: cover; /* adapte l'image a la taile imposé  
             /*filter: 
           }*/
-          .header{
-            font-size: x-large;
-          }
+
         </style>
 
 
@@ -64,20 +62,21 @@
                 </button>
                 </div>
                 <br>
-                <div> <p> <?php echo  $Price . " €";?> </p> </div>
+                 <p> <?php echo  $Price . " €";?> </p> 
 
 
             </aside>
             <article class="main">
-            <p> Ingredients :</p>
-            <div class=""
+            <p> Ingredients :</p><br>
+            <div>
             <?php
-                    foreach($json->ingredients as $ing)
-                    {?>
-                        <p> <?php echo "\t" , $ing->name_fr;?> </p>
-                    <?php
-                    }
-                    ?>
+                foreach($json->ingredients as $ing)
+                {?>
+                    <p> <?php echo $ing->name_fr;?> </p>
+                <?php
+                }
+            ?>
+            </div>
             </article>
             
             <footer class="footer">
@@ -88,7 +87,7 @@
                 <p> <? echo($Cpt) ?> </p>
                 <button type="button" class="btn-close" aria-label="Close"></button>
             </footer>
-            </div>
+            
                     
             
             <?php

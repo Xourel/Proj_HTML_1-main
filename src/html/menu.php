@@ -84,7 +84,7 @@
                         $param = urlencode(json_encode($item));
                         ?>
                             
-                            <a href="produit.php?item=<?php echo $param; ?>"><?php echo $item->name_fr ; ?></a><br>
+                            <a href="plat.php?item=<?php echo $param; ?>"><?php echo $item->name_fr ; ?></a><br>
                         <?php
                     //echo $PlateName;
                     } 

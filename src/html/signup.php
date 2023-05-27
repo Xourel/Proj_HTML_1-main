@@ -1,3 +1,5 @@
+
+
 <?php
 ob_start();
 
@@ -21,7 +23,7 @@ ob_start();
                 $_SESSION['password'] = $mdp;
                 $_SESSION['client_id'] = $RecupUser->fetch()['client_id'];
                 echo $_SESSION['client_id'];
-                header('Location: index.php');
+
             }
             
             
@@ -35,14 +37,26 @@ ob_start();
 
 ?>
 
-<div align="center">
-        <p>LOGIN</p>
-        <form method="POST" action="" class="form" align="center">
-                <br>
-                <input type="email" id="email" name = "email" placeholder="Entrez votre email" autocomplete="off"/><br><br>
-                <input type="password" id="password" name = "password" placeholder="Entrez votre mot de passe" autocomplete="off"/><br><br>
-                <input type="submit" name="envoi">
-            </form>
+
+<div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" name = "email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name = "password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <input type="submit" name="envoi">
+                    <div class="register">
+                    </div>
+                </form>
+            </div>
         </div>
 
 <?php

@@ -40,16 +40,34 @@ ob_start();
 
 ?>
 
-<div align="center">
-        <p>LOGIN</p>
-        <form method="POST" action="" class="form" align="center">
-                <br>
-                <input type="email" id="email" name = "email" placeholder="Entrez votre email" autocomplete="off"/><br><br>
-                <input type="password" id="password" name = "password" placeholder="Entrez votre mot de passe" autocomplete="off"/><br><br>
-                <input type="submit" name="envoi">
-                <a href="signup.php">Sign up</a><br>
-            </form>
+<link rel="stylesheet" href="../css/login.css">
+<section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" name = "email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name = "password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <input type="submit" name="envoi">
+                    <div class="register">
+                        <p>Don't have a account <a href="signup.php#">Register</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 
 <?php
     $content = ob_get_clean();
