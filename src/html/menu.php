@@ -1,26 +1,31 @@
 <style>
             
             .button {
-            width: 300px;
+            width: 350px;
             height:40px;
             background-color: #F4CFDF;
             display: block;
             margin-top : auto;
             }
- 
+            .button:hover {background-color: #fa579e;}
+
             .menu-main{
                 margin-left:5%;
+                margin-top:3%;
                 width:90%;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
                 flex-wrap: wrap;
-                background: red;
+                background:lightblue;
+            }
+            .menu-header{
+                margin-top: 5%;
             }
             
-            .button:hover {background-color: #fa579e;}
+            
             .menu{
-                background-color:lightblue;
+                background-color:#5784BA ;
                 color:black;
                 text-align: center; 
                 width: 100%; 
@@ -32,10 +37,25 @@
                 font-size: x-large;
             }
 
+            .menu-link{
+                text-decoration:none;
+                color:white;
+            }
+            .menu-link:hover{
+                text-decoration:underline;
+            }
+
             h1{
                 text-align: center;
             }
             
+            @media screen and (max-width:700px){
+                .menu-main{
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
         </style>
 
             
@@ -73,7 +93,7 @@
     ob_start();
     $count = 0;
     ?>
-    <div><h1>Menu</h1></div>
+    <div class="menu-header"><h1>Menu</h1></div>
     <div class="menu-main"><?php
         foreach ($json->data as $key )
         {?>
@@ -89,7 +109,7 @@
                             if ($IdCat ==  $item->id_category){
                                 $param = urlencode(json_encode($item));
                                 ?>
-                                    <a href="plat.php?item=<?php echo $param; ?>"><?php echo $item->name_fr ; ?></a><br>
+                                    <a class="menu-link" href="plat.php?item=<?php echo $param; ?>"><?php echo $item->name_fr ; ?></a><br>
                                 <?php
                             } 
                         }

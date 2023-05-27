@@ -1,36 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="..\css\index.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>accueil</title>
-</head> 
-<body>
-  
-    <?php
-    ob_start();
-    ?>
-    
-    <h1>Bienvenue !</h1>
 
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="..\css\index.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>accueil</title>
+</head>
+
+<body>
+  <style>
+    .joli-image {
+      display:flex;
+      justify-content:center;
+      margin-top: 5%;
+    }
+
+    .header {
+      margin-top: 5%;
+    }
+
+    h1 {
+      text-align:center;
+    }
+
+    @media screen and (max-width:700px){
+                .header{
+                  margin-top: 10%;
+                }
+            }
+
+  </style>
+  <?php
+  ob_start();
+  ?>
+  <div class="header">
+  <h1>Bienvenue !</h1>
+  </div>
+  <div class="joli-image">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <img src="..\..\res\img\index\windows.jpg" alt="Image 1" height="300">
-    </div>
-    <div class="carousel-item">
-    <img src="..\..\res\img\index\cooking.jpg" alt="Image 2" height="300">
-    </div>
-    <div class="carousel-item">
-    <img src="..\..\res\img\index\plate.jpg" alt="Image 3" height="300">
-    </div>
-    <div class="carousel-item">
-    <img src="..\..\res\img\index\eating.jpg" alt="Image 4" height="300">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="..\..\res\img\index\windows.jpg" alt="Image 1" height="300">
+        </div>
+        <div class="carousel-item">
+          <img src="..\..\res\img\index\cooking.jpg" alt="Image 2" height="300">
+        </div>
+        <div class="carousel-item">
+          <img src="..\..\res\img\index\plate.jpg" alt="Image 3" height="300">
+        </div>
+        <div class="carousel-item">
+          <img src="..\..\res\img\index\eating.jpg" alt="Image 4" height="300">
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -60,9 +85,8 @@
     <img src="..\..\res\img\index\couple.jpg" alt="love" weight="300">
   </div>
 
-<?php
-$content = ob_get_clean();
-    require_once("template.php");
-    ?>
-    
-    
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.380394006403!2d2.301489264127351!3d48.85692238680739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fd79a073abf%3A0xf7ddc00d16c4028c!2sRue%20Saint-Dominique%2C%2075007%20Paris!5e0!3m2!1sfr!2sfr!4v1685223716708!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <?php
+  $content = ob_get_clean();
+  require_once("template.php");
+  ?>

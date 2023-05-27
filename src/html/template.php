@@ -25,7 +25,7 @@ session_start();
       </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="index.php">Chicken Deep</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@ session_start();
                       Client
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="config.php">Compte</a></li>
+                      <li><a class="dropdown-item" href="login.php">Compte</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Panier</a></li>
                       <li><a class="dropdown-item" href="#">Réservation</a></li>
