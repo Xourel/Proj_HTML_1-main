@@ -1,4 +1,6 @@
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -13,7 +15,8 @@
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -35,13 +38,14 @@
 }
 
 .prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-  }
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -76,7 +80,8 @@
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -87,51 +92,53 @@
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-
-
 .wrapper {
-    display: flex;  
-    flex-flow: row wrap;
-    font-weight: bold;
-    text-align: center; 
-  }
-  
-  .wrapper > * {
-    padding: 10px;
-    flex: 1 100%;
-  }
-  
-  .header {
-    background: tomato;
-  }
-  
-  .footer {
-    background: lightgreen;
-  }
-  
-  .main {
-    text-align: left;
-    background: deepskyblue;
-  }
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
 
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
 
+.header {
+  background: tomato;
+}
 
-  .aside-1 {
-    background: gold;
+.footer {
+  background: lightgreen;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+.aside-2 {
+  background: hotpink;
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 0 0;
   }
-  
-  .aside-2 {
-    background: hotpink;
-  }
-  
-  @media all and (min-width: 600px) {
-    .aside { flex: 1 0 0; }
-  }
-  /*
+}
+/*
 Le premier chiffre (flex-grow): Il définit la capacité d'un élément à grandir et à occuper l'espace disponible.
  Dans ce cas, la valeur 1 indique que l'élément .aside peut grandir et prendre de l'espace supplémentaire si disponible.
 
@@ -142,6 +149,6 @@ Le troisième chiffre (flex-basis): Il définit la taille de base d'un élément
 La valeur 0 signifie que l'élément .aside a une taille de base de zéro, ce qui lui permet de s'ajuster dynamiquement en fonction de l'espace disponible.
   */
 
-  .body {
-    padding: 2em; 
-  }
+.body {
+  padding: 2em;
+}
