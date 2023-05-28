@@ -37,11 +37,12 @@ ob_start();
 
 ?>
 
-
+<link rel="stylesheet" href="../css/login.css">
+<section>
 <div class="form-box">
             <div class="form-value">
                 <form action="">
-                    <h2>Login</h2>
+                    <h2>Sign up</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
                         <input type="email" name = "email" required>
@@ -58,7 +59,7 @@ ob_start();
                 </form>
             </div>
         </div>
-
+</section>
 <?php
     $content = ob_get_clean();
     require_once("template.php");

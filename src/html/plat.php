@@ -72,12 +72,20 @@ ob_start();
   .footer {
     padding: 20px;
     text-align: center;
-    margin-bottom: 0px;
+    margin-top: 1%;
     background-color: #5784BA;
     color: #B6D8F2;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+    color: #B6D8F2;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 
   h1 {
@@ -93,14 +101,7 @@ ob_start();
     text-align: center;
   }
 
-  a {
-    text-decoration: none;
-    color: #B6D8F2;
-  }
 
-  a:hover {
-    text-decoration: underline;
-  }
 
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 700px) {
@@ -163,13 +164,13 @@ ob_start();
 <!-- Footer -->
 <div class="footer">
 
-  <div>
-    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Notre Instagram</a>
-  </div>
-  <h2>Bon apétit</h2>
-  <div>
-    Notre téléphone: <a href="https://www.youtube.com/watch?v=VGrVlrIAQz4">06.11.84.34.56</a>
-  </div>
+<h4>
+  <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Notre Instagram</a>
+      </h4>
+<h2>Bon appétit</h2>
+<h4>
+  Notre téléphone: <a href="https://www.youtube.com/watch?v=VGrVlrIAQz4">06.11.84.34.56</a>
+      </h4>
 
 </div>
 

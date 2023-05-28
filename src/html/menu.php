@@ -55,6 +55,29 @@
         text-align: center;
     }
 
+    .footer {
+        padding: 20px;
+        text-align: center;
+        background-color: #5784BA;
+        color: #B6D8F2;
+        width: 100%;
+        display: flex;
+        bottom : 0px;
+        flex-direction: row;
+        justify-content: space-between;
+        position: absolute;
+        align-items: center;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: #B6D8F2;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+
     @media screen and (max-width:700px) {
         .menu-main {
             flex-direction: column;
@@ -123,9 +146,17 @@ $count = 0;
                 ?>
 </div>
 
-<dix class="menu-footer">
+<!-- Footer -->
+<div class="footer">
 
-</dix>
+    <h4>
+        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Notre Instagram</a>
+    </h4>
+    <h2>Bon appétit</h2>
+    <h4>
+        Notre téléphone: <a href="https://www.youtube.com/watch?v=VGrVlrIAQz4">06.11.84.34.56</a>
+    </h4>
+</div>
 
 
 
